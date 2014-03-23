@@ -12,8 +12,37 @@
 ### Design
 ![](https://raw.github.com/ukoreh/dotnetlog/master/arch.png) 
 
+### Output for "SimpleLogFormatter"
+![](https://raw.github.com/ukoreh/dotnetlog/master/SimpleLogFormatterOutput.png) 
+
+### Example One
+```xml
+<configSections>
+	<section name="Logging.Config"
+			 type="Logging.Config, Logging" />
+	<section name="PlainFile.Config"
+			 type="Logging.Persisters.PlainFile.Config, Logging.Persisters.PlainFile" />
+</configSections>
+
+<Logging.Config
+        verbosity="eDebugs"
+        persister="Logging.Persisters.PlainFile" />
+
+<PlainFile.Config
+	logFile="C:\\log.log" />    
+```
+
+```c#
+using Logging;
+...
+public static void Main()
+{ 
+	 ILogger logger = LogManager.GetLogger();
+			 logger.LogInfo( "Message of logical category" );
+			 logger.LogTechnicalInfo( "Message of technical category" );
+}
+```
+
 ### Existing
 ![](https://raw.github.com/ukoreh/dotnetlog/master/existing.png) 
 
-### Output for "SimpleLogFormatter"
-![](https://raw.github.com/ukoreh/dotnetlog/master/SimpleLogFormatterOutput.png) 
