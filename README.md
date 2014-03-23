@@ -1,7 +1,7 @@
 
 ## What is it
 <table><tr>
-	<td>![](https://raw.github.com/ukoreh/dotnetlog/master/logo.png)</td>
+	<td width="180">![](https://raw.github.com/ukoreh/dotnetlog/master/logo.png)</td>
 	<td>
 		A fast and flexible logging and/or diagnostics framework for .NET
 		It allows you to plug it into an existing or new application with minimal changes to the code.
