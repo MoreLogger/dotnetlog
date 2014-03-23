@@ -1,10 +1,15 @@
 
 ## What is it
-A fast and flexible logging and/or diagnostics framework for .NET
-It allows you to plug it into an existing or new application with minimal changes to the code.
-Or it can be used as in classic scenarios of logging things along the way at different levels.
+<table><tr>
+	<td>![](https://raw.github.com/ukoreh/dotnetlog/master/logo.png)</td>
+	<td>
+		A fast and flexible logging and/or diagnostics framework for .NET
+		It allows you to plug it into an existing or new application with minimal changes to the code.
+		Or it can be used as in classic scenarios of logging things along the way at different levels.	
+	</td>
+</table></tr>
 
-![](https://raw.github.com/ukoreh/dotnetlog/master/logo.png) 
+
 
 ---
 
