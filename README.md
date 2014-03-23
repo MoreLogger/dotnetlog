@@ -16,6 +16,9 @@
 ![](https://raw.github.com/ukoreh/dotnetlog/master/SimpleLogFormatterOutput.png) 
 
 ### Example One
+
+Result: The logs will go to the storages (persisters) that are indicated in the config file.
+
 ```xml
 <configSections>
 	<section name="Logging.Config"
@@ -23,7 +26,9 @@
 	<section name="PlainFile.Config"
 			 type="Logging.Persisters.PlainFile.Config, Logging.Persisters.PlainFile" />
 </configSections>
+```
 
+```xml
 <Logging.Config
         verbosity="eDebugs"
         persister="Logging.Persisters.PlainFile" />
@@ -40,6 +45,59 @@ public static void Main()
 	 ILogger logger = LogManager.GetLogger();
 			 logger.LogInfo( "Message of logical category" );
 			 logger.LogTechnicalInfo( "Message of technical category" );
+}
+```
+
+### Example Two
+
+Result: Hooking into System.Diagnostics and redirect those logs to a text file.
+
+```xml
+<configSections>
+	<section name="Logging.Config"
+			 type="Logging.Config, Logging" />
+	<section name="PlainFile.Config"
+			 type="Logging.Persisters.PlainFile.Config, Logging.Persisters.PlainFile" />
+</configSections>
+```
+
+```xml
+<system.diagnostics>
+	<trace autoflush="true" indentsize="4">
+		<listeners>
+			<add name="TraceListener.Logger"
+				 type="Logging.Adapters.In.TraceListener.Logger, Logging.Adapters.In.TraceListener" />
+		</listeners>
+	</trace>
+</system.diagnostics>
+```
+
+```xml
+<Logging.Config
+	verbosity="eDebugs"
+	persister="Logging.Persisters.PlainFile" />
+
+<PlainFile.Config
+	logFile="C:\\log.log" />
+```
+
+```c#
+using System.Diagnostics;
+...
+public static void Main()
+{
+		Trace.WriteLine( "Start" );
+		Trace.Indent();
+			Trace.WriteLine( "aaaaaaaa" );
+			Trace.WriteLine( "aaaaaaaa" );
+			Trace.WriteLine( "aaaaaaaa" );
+			Trace.Indent();
+				Trace.WriteLine( "bbbbbbbb" );
+				Trace.WriteLine( "bbbbbbbb" );
+				Trace.WriteLine( "bbbbbbbb" );
+			Trace.Unindent();
+		Trace.Unindent();
+		Trace.WriteLine( "End" );
 }
 ```
 
