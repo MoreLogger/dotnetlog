@@ -1,5 +1,5 @@
 
-## What is it
+### What is it
 <table><tr>
 	<td width="180">![](https://raw.github.com/ukoreh/dotnetlog/master/logo.png)</td>
 	<td>
@@ -9,15 +9,11 @@
 	</td>
 </table></tr>
 
-
-
----
-
-## Design
+### Design
 ![](https://raw.github.com/ukoreh/dotnetlog/master/arch.png) 
 
-## Existing
+### Existing
 ![](https://raw.github.com/ukoreh/dotnetlog/master/existing.png) 
 
-## Output for "SimpleLogFormatter"
+### Output for "SimpleLogFormatter"
 ![](https://raw.github.com/ukoreh/dotnetlog/master/SimpleLogFormatterOutput.png) 
