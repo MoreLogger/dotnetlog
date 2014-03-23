@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{65FA3F67-A4DB-4B71-B56C-545BC995EEDF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Logging.Tester</RootNamespace>
+    <AssemblyName>Logging.Tester</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logging.Adapters.In.TraceListener\Logging.Adapters.In.TraceListener.csproj">
+      <Project>{688091DF-5CBE-44C9-9FF1-3E4186316609}</Project>
+      <Name>Logging.Adapters.In.TraceListener</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging.Adapters.Out.Log4Net\Logging.Adapters.Out.Log4Net.csproj">
+      <Project>{66A16CF5-5BDD-4DD0-9BB2-664379346DE3}</Project>
+      <Name>Logging.Adapters.Out.Log4Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging.Adapters.Out.Trace\Logging.Adapters.Out.Trace.csproj">
+      <Project>{85C43ECA-9F88-41DF-A2CE-B92D760D564D}</Project>
+      <Name>Logging.Adapters.Out.Trace</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging.Modifiers.Async\Logging.Modifiers.Async.csproj">
+      <Project>{A1CEEA4C-89E7-4C54-BF8A-76800AA19080}</Project>
+      <Name>Logging.Modifiers.Async</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging.Modifiers.Buffered\Logging.Modifiers.Buffered.csproj">
+      <Project>{961C0618-DADE-4F95-9A9E-73FA69B61DDF}</Project>
+      <Name>Logging.Modifiers.Buffered</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging.Modifiers.Multi\Logging.Modifiers.Multi.csproj">
+      <Project>{9DD247EA-5A1B-4F26-BFC1-715986FF74F9}</Project>
+      <Name>Logging.Modifiers.Multi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging.Modifiers.SimpleLogFormatter\Logging.Modifiers.SimpleLogFormatter.csproj">
+      <Project>{103AC8DE-5A18-478E-A639-FA437120494D}</Project>
+      <Name>Logging.Modifiers.SimpleLogFormatter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging.Persisters.Email\Logging.Persisters.Email.csproj">
+      <Project>{993377EA-6836-43B1-893D-0F27C3CEA077}</Project>
+      <Name>Logging.Persisters.Email</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging.Persisters.PlainFile\Logging.Persisters.PlainFile.csproj">
+      <Project>{135C257A-74BB-4FDC-94F3-886BC3B31814}</Project>
+      <Name>Logging.Persisters.PlainFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging.Persisters.SystemConsole\Logging.Persisters.SystemConsole.csproj">
+      <Project>{D64782A3-3AB3-4BAA-A128-06C2C798D00A}</Project>
+      <Name>Logging.Persisters.SystemConsole</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging.Persisters.WindowsEventLog\Logging.Persisters.WindowsEventLog.csproj">
+      <Project>{C96526F7-3056-4782-8D1B-B4C56535CE10}</Project>
+      <Name>Logging.Persisters.WindowsEventLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{AD5F6D81-9239-4BE0-9201-B70CFFBDCD7C}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
