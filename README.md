@@ -103,10 +103,20 @@ public static void Main()
 Task => Asynchronous logging to different storages(persisters) + Email notification (just another persister).
 
 What happens with a config like this is that you have in your hands the control to build and shape the pipe through which the logs flow. 
-Step 1: We want an non blocking call to log API for that reason we use Async module 
-Step 2: Then by using Multi we want to stock the logs into several storages ( a practical use would be log file and send an email with the error ) 
-Step 3: Each module specified in Multi gets its specific parameters it need to function 
-Step 4: Done, we start log things we need at Trace level, Debug level and other intermediary levels ....
+<table>
+	<tr><td>Step 1:</td>
+		<td>We want an non blocking call to log API for that reason we use Async module</td></tr>
+
+	<tr><td>Step 2:</td>
+		<td>Then by using Multi we want to stock the logs into several storages ( a practical use would be log file and send an email with the error ) </td></tr>
+
+	<tr><td>Step 3:</td>
+		<td>Each module specified in Multi gets its specific parameters it need to function</td></tr>
+	
+	<tr><td>Step 4:</td>
+		<td>Done, we start log things we need at Trace level, Debug level and other intermediary levels</td></tr>
+</table></tr>
+
 
 ```xml
 <configuration>
